@@ -1,3 +1,10 @@
+/*
+ * File:   beta_plus_seq.cpp
+ * Author: Nikolay Ulyanov
+ *
+ * Created on 05 May 2014
+ */
+
 // labeling conventions: 
 // V \in [0, 1, ..., n-1]
 // E \in [1, ..., n-1]
