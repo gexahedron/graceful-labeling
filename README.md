@@ -28,7 +28,7 @@ Example:
 * seq edges:   2->6, 6->0, 2->5, 5->4, 2->3, 3->1 (which means that we have every sum between 4 and 9)
 
 # Other new results (or alternatively, it's also interesting to note the following:)
-There is also a very interesting k-beta+ labeling (when we fix an arbitrary set of values for edges and still ask for properties of beta+ that values of vertices in one of the partitions are locally more than values of another partition). It looks like there is only 1 affine family of counterexamples:
+* There is also a very interesting k-beta+ labeling (when we fix an arbitrary set of values for edges and still ask for properties of beta+ that values of vertices in one of the partitions are locally more than values of another partition). It looks like there is only 1 affine family of counterexamples:
 
 T = {0->1, 1->2, 0->3, 3->4, 0->5, 5->6}; E = {1, 2, 3, 4, 6, 7} * c, c >= 1.
 
