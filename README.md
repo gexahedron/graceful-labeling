@@ -31,7 +31,7 @@ There also a very interesting k-beta+ labeling (when we fix an arbitrary set of 
 A question!
 * Does there exist a k-sequential labeling? Maybe also a k-beta+seq labeling?
 
-It's also interesting to note the following:
+# Other new results (or alternatively, tt's also interesting to note the following:)
 * \rho++ bigraceful labeling is the same as \sigma++ labeling (you just need to reverse values in one the partitions as in beta+seq)
 * number of graceful labelings for trees of fixed number of vertices is always divisible by 4 (TODO: we get a factor of 2 by reversing all labels and another factor by 2 by applying a proof by moving the edge with label 1)
 * number of sequential labelings for all graphs (not only trees) with n vertices is equal to n! (TODO: proof using Wilf-Zeilberger method); which is actually the same number of graceful labelings for graphs with n vertices. Maybe there do exist some interesting bijection between graceful and sequential labelings?
