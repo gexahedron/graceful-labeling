@@ -1,3 +1,11 @@
+/*
+ * File:   k_beta_plus.cpp
+ * Author: Nikolay Ulyanov
+ *
+ * Created on 18 June 2014
+ */
+
+
 // k-beta-seq labelings; palindrome schemes
 // labeling conventions:
 // |V| = n, |E| = n - 1; m >= n
