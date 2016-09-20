@@ -34,7 +34,7 @@ A question!
 # Other new results (or alternatively, it's also interesting to note the following:)
 * already mentioned k-beta+ labeling
 * \rho++ bigraceful labeling is the same as \sigma++ labeling (you just need to reverse values in one the partitions as in beta+seq)
-* number of graceful labelings for trees of fixed number of vertices is always divisible by 4 (TODO: we get a factor of 2 by reversing all labels and another factor by 2 by applying a proof by moving the edge with label 1)
+* number of graceful labelings for trees of fixed number of vertices is always divisible by 4 (TODO: we get a factor of 2 by reversing all labels and another factor by 2 by applying a proof by moving the edge with label 1) (oh, actually this was also recently independently proven in [8])
 * number of sequential labelings for all graphs (not only trees) with n vertices is equal to n! (TODO: proof using Wilf-Zeilberger method); which is actually the same number of graceful labelings for graphs with n vertices. Maybe there do exist some interesting bijection between graceful and sequential labelings?
 * and maybe, but no intuition or proof, with n not equal to 3, the number of alpha-labelings for all graphs is always an odd number (verified for n <= 14)
 * suppose we study a question of existence of alpha labeling of a tree. Sometimes a tree doesn't have it because of the parity condition (TODO). Can this obstruction also be a problem for beta+ labeling? It turns out that no, it can't (TODO).
@@ -56,3 +56,5 @@ A question!
 [6] M. Mavronicolas, L. Michael, "A substitution theorem for graceful trees and its applications", Discrete Mathematics, Vol. 309, pp. 3757–3766, 2009.
 
 [7] M. C. Superdock, The graceful tree conjecture: a class of graceful diameter-6 trees, arXiv preprint arXiv:1403.1564, (2014).
+
+[8] D. Anick, "Counting graceful labelings of trees: A theoretical and empirical study", Discrete Applied Mathematics, Vol. 198, pp. 65-81, 2016.
