@@ -1,4 +1,9 @@
 # Graceful labeling + sequential labeling
+
+[![Join the chat at https://gitter.im/gexahedron/graceful-labeling](https://badges.gitter.im/gexahedron/graceful-labeling.svg)](https://gitter.im/gexahedron/graceful-labeling?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+[![License](http://img.shields.io/:license-mit-blue.svg)](http://doge.mit-license.org)
+
+
 Various code related to the problem of graph labelings (specifically, trees: graceful labelings and relatives of harmonious labelings)
 
 # And introducing new beta+seq labeling!
