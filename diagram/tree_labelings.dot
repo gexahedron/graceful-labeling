@@ -103,8 +103,10 @@ digraph labelings {
 
     antimagic [label="(a, 1)-edge-antimagic"]
     seq -> antimagic
-    seq_add [label="1-seq-additive"]
-    seq -> seq_add
+    one_seq_add [label="1-seq-additive"]
+    k_seq_add [label="k-seq-additive"]
+    seq -> k_seq_add
+    one_seq_add -> k_seq_add
 
     alpha_2 [label=<α<SUB>2</SUB>>]
     rho_sigma -> alpha_2
