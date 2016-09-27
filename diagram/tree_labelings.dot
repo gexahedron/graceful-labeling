@@ -1,0 +1,94 @@
+digraph labelings {
+    style=invis;
+    rankdir="LR";
+    graph [fontname = "georgia"];
+    node [fontname = "georgia"];
+    edge [fontname = "georgia"];
+    node [color=lightblue, style=filled, shape=Mrecord];
+
+    subgraph cluster_alpha {
+        {
+            node [style="dashed,filled", color="black", fillcolor="lightblue"];
+            alpha_deg3 [label="α for max deg = 3"];
+        }
+        {
+            node [style="dashed,filled", color="red", fillcolor="lightblue"];
+            alpha [label="α"];
+        }
+    }
+    beta_plus_seq [label=<β<SUP>+</SUP>seq>];
+    alpha -> beta_plus_seq;
+    beta_plus_seq -> seq;
+    beta_plus [label=<β<SUP>+</SUP>>];
+    beta_plus_seq -> beta_plus;
+    seq [label="sequential"]
+    semt [label="super-edge-magic total"]
+    harm [label="harmonious"]
+    seq -> semt;
+    semt -> harm;
+    subgraph cluster_lr {
+        node [style="filled,rounded", color="black", fillcolor="lightblue", shape=record];
+        rho_sigma [label=<{ρ<SUP>++</SUP>bi | σ<SUP>++</SUP>}>];
+    }
+    beta_plus -> rho_sigma;
+    subgraph cluster_beta {
+        {
+            node [style="dashed,filled", color="black", fillcolor="khaki"];
+            inf_beta [label="β for infinite trees"];
+        }
+        beta [label="β"];
+    }
+    beta_plus -> beta;
+    {
+        node [style="dashed,filled", color="black", fillcolor="lightblue"];
+        beta_rot [label="max-edge β-rotatability"]
+    }
+    beta_rot -> beta
+    subgraph cluster_rho {
+        rho [label="ρ"];
+        rho_bi [label="ρ bigraceful"];
+    }
+    harm -> rho_bi;
+    rho_sigma -> rho_bi;
+    rho_pp [label=<ρ<SUP>++</SUP>>];
+    rho_sigma -> rho_pp;
+    sigma_p [label=<σ<SUP>+</SUP>>];
+    rho_sigma -> sigma_p;
+    sigma [label="σ"];
+    beta -> sigma;
+    sigma_p -> sigma;
+    rho_p [label=<ρ<SUP>+</SUP>>];
+    rho_pp -> rho_p;
+    sigma_p -> rho_p;
+    sigma -> rho;
+    rho_p -> rho;
+    {
+        node [style="dashed,filled", color="black", fillcolor="lightblue"];
+        k_beta_p [label=<any-β<SUP>+</SUP>>];
+    }
+    k_beta_p -> beta_plus;
+
+    odd_beta [label="odd-β"]
+    beta_plus -> odd_beta
+    super_beta [label="super β"]
+    beta -> super_beta
+    subgraph cluster_harmonious {
+        harm
+        elegant
+        felicitous
+        odd_harm [label="odd-harmonious"]
+    }
+    k_graceful [label="k-graceful"]
+    k_beta_p -> k_graceful
+    k_beta_p -> triangular
+
+    antimagic [label="(a, 1)-edge-antimagic"]
+    seq -> antimagic
+    seq_add [label="1-seq-additive"]
+    seq -> seq_add
+
+    alpha_2 [label=<α<SUB>2</SUB>>]
+    rho_sigma -> alpha_2
+    alpha_2 -> sigma
+}
+

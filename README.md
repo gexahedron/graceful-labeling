@@ -7,7 +7,7 @@
 Various code related to the problem of graph labelings (specifically, trees: graceful labelings and relatives of harmonious labelings)
 
 # And introducing new β+seq labeling!
-![Tree labelings](/images/tree_labelings.png)
+![Tree labelings](/diagram/tree_labelings.png)
 
 Notation is borrowed from [1] and [2]:
 * ρ bi = ρ bigraceful
@@ -34,8 +34,8 @@ Example:
 * seq edges:   2->6, 6->0, 2->5, 5->4, 2->3, 3->1 (which means that we have every sum between 4 and 9)
 
 # Other new results (or alternatively, it's also interesting to note the following:)
-* There is also a very interesting k-β+ labeling (when we fix an arbitrary set of values for edges and still ask for properties of β+ that values of vertices in one of the partitions are locally more than values of another partition). It looks like there is only 1 affine family of counterexamples: T = {0->1, 1->2, 0->3, 3->4, 0->5, 5->6}; E = {1, 2, 3, 4, 6, 7} * c, c >= 1 (and also a question: does there exist a k-sequential labeling? Maybe also a k-β+seq labeling?)
-* already mentioned k-β+ labeling
+* There is also a very interesting any-β+ labeling (when we fix an arbitrary set of values for edges and still ask for properties of β+ that values of vertices in one of the partitions are locally more than values of another partition). It looks like there is only 1 affine family of counterexamples: T = {0->1, 1->2, 0->3, 3->4, 0->5, 5->6}; E = {1, 2, 3, 4, 6, 7} * c, c >= 1 (and also a question: does there exist a any-sequential labeling? Maybe also a any-β+seq labeling?)
+* already mentioned any-β+ labeling
 * ρ++ bigraceful labeling is the same as σ++ labeling (you just need to reverse values in one the partitions as in β+seq)
 * number of graceful labelings for trees of fixed number of vertices is always divisible by 4 (TODO: we get a factor of 2 by reversing all labels and another factor by 2 by applying a proof by moving the edge with label 1) (oh, actually this was also recently independently proven in [8])
 * number of sequential labelings for all graphs (not only trees) with n vertices is equal to n! (TODO: proof using Wilf-Zeilberger method); which is actually the same number of graceful labelings for graphs with n vertices. Maybe there do exist some interesting bijection between graceful and sequential labelings?
