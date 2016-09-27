@@ -21,7 +21,7 @@ digraph labelings {
 
     subgraph cluster_alpha {
         {
-            node [style="dashed,filled", color="red", fillcolor="lightblue"];
+            node [style="filled", color="lightcoral", fillcolor="lightcoral"];
             alpha [label="α"];
         }
         {
@@ -81,14 +81,20 @@ digraph labelings {
     }
     k_beta_p -> beta_plus;
 
-    odd_beta [label="odd-β, odd-graceful"]
-    beta_plus -> odd_beta
+    odd_beta_plus [label="odd-β+"]
+    beta_plus -> odd_beta_plus
+    odd_beta_plus -> rho_p
+    odd_beta [label="odd-graceful"]
+    odd_beta_plus -> odd_beta
+    odd_beta -> rho
     super_beta [label="super β"]
     beta -> super_beta
     subgraph cluster_harmonious {
-        elegant
         odd_harm [label="odd-harmonious"]
         harm
+
+        node [style="dashed,filled", color="black", fillcolor="lightblue"];
+        elegant
     }
     seq -> felicitous
     k_graceful [label="k-graceful"]
