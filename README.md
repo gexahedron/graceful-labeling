@@ -10,15 +10,13 @@ Various code related to the problem of graph labelings (specifically, trees: gra
 ![Tree labelings](/diagram/tree_labelings.png)
 
 Notation is borrowed from [1] and [2]:
-* ρ bi = ρ bigraceful
-* harm = harmonious
-* semt = super-edge-magic total
 * seq = sequential
+* ρ bi = ρ bigraceful
 * red dotted border means that this labeling doesn't work for all trees and we don't have a full characterization of counterexamples
 * black dotted border means that this labeling has known families of counterexamples and it is conjectured that there are no other counterexamples
 * yellow colour means that it's a theorem
 
-Beta+seq labeling - is a new labeling, which is a strict subset of both β+ and sequential labelings (TODO: is it equal to intersection of them both?): we have 2 partitions of vertices in the tree and edges connect vertices from different partitions; to switch from β+ to seq and vice versa we "reverse" values in one of the partitions and shift them (mod number of vertices) by appropriate value (TODO: i guess this value is easy to calculate, depending on the size of partitions). And so the conjecture is:
+β+seq labeling - is a new labeling, which is a strict subset of both β+ and sequential labelings (TODO: is it equal to intersection of them both?): we have 2 partitions of vertices in the tree and edges connect vertices from different partitions; to switch from β+ to seq and vice versa we "reverse" values in one of the partitions and shift them (mod number of vertices) by appropriate value (TODO: i guess this value is easy to calculate, depending on the size of partitions). And so the conjecture is:
 
 For every tree there exists a β+seq labeling.
 

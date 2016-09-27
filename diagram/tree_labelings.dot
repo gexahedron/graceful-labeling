@@ -45,8 +45,9 @@ digraph labelings {
     }
     beta_rot -> beta
     subgraph cluster_rho {
-        rho [label="ρ"];
-        rho_bi [label="ρ bigraceful"];
+        node [fillcolor="lightblue", color="black", style="filled,rounded", shape=record];
+        rho [label=<{ρ | Ringel-Kotzig for K<SUB>n</SUB>}>];
+        rho_bi [label=<{ρ bigraceful | Ringel-Kotzig for K<SUB>n, n</SUB>}>];
     }
     harm -> rho_bi;
     rho_sigma -> rho_bi;
@@ -73,10 +74,10 @@ digraph labelings {
     super_beta [label="super β"]
     beta -> super_beta
     subgraph cluster_harmonious {
-        harm
         elegant
         felicitous
         odd_harm [label="odd-harmonious"]
+        harm
     }
     k_graceful [label="k-graceful"]
     k_beta_p -> k_graceful
