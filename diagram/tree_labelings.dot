@@ -1,42 +1,52 @@
 digraph labelings {
-    style=invis;
+    //style=invis;
     rankdir="LR";
     graph [fontname = "georgia"];
     node [fontname = "georgia"];
     edge [fontname = "georgia"];
     node [color=lightblue, style=filled, shape=Mrecord];
 
+    subgraph thms {
+        node [style="filled", color="black", fillcolor="khaki"];
+        cordial
+        node [style="dashed,filled", color="black", fillcolor="khaki"];
+        inf_beta [label="β for infinite trees"];
+    }
+
+    subgraph important_conjectures {
+        node [fillcolor="lightblue3"]
+        beta [label=<<B>β, graceful</B>>]
+        seq [label=<<B>sequential</B>>]
+    }
+
     subgraph cluster_alpha {
-        {
-            node [style="dashed,filled", color="black", fillcolor="lightblue"];
-            alpha_deg3 [label="α for max deg = 3"];
-        }
         {
             node [style="dashed,filled", color="red", fillcolor="lightblue"];
             alpha [label="α"];
         }
+        {
+            node [style="dashed,filled", color="black", fillcolor="lightblue"];
+            alpha_deg3 [label="α for max deg = 3"];
+        }
     }
+
     beta_plus_seq [label=<β<SUP>+</SUP>seq>];
     alpha -> beta_plus_seq;
     beta_plus_seq -> seq;
     beta_plus [label=<β<SUP>+</SUP>>];
     beta_plus_seq -> beta_plus;
-    seq [label="sequential"]
     semt [label="super-edge-magic total"]
     harm [label="harmonious"]
     seq -> semt;
     semt -> harm;
-    subgraph cluster_lr {
+    {
         node [style="filled,rounded", color="black", fillcolor="lightblue", shape=record];
         rho_sigma [label=<{ρ<SUP>++</SUP>bi | σ<SUP>++</SUP>}>];
     }
     beta_plus -> rho_sigma;
     subgraph cluster_beta {
-        {
-            node [style="dashed,filled", color="black", fillcolor="khaki"];
-            inf_beta [label="β for infinite trees"];
-        }
-        beta [label="β"];
+        inf_beta
+        beta
     }
     beta_plus -> beta;
     {
@@ -44,6 +54,8 @@ digraph labelings {
         beta_rot [label="max-edge β-rotatability"]
     }
     beta_rot -> beta
+    beta -> cordial
+    harm -> cordial
     subgraph cluster_rho {
         node [fillcolor="lightblue", color="black", style="filled,rounded", shape=record];
         rho [label=<{ρ | Ringel-Kotzig for K<SUB>n</SUB>}>];
@@ -69,16 +81,16 @@ digraph labelings {
     }
     k_beta_p -> beta_plus;
 
-    odd_beta [label="odd-β"]
+    odd_beta [label="odd-β, odd-graceful"]
     beta_plus -> odd_beta
     super_beta [label="super β"]
     beta -> super_beta
     subgraph cluster_harmonious {
         elegant
-        felicitous
         odd_harm [label="odd-harmonious"]
         harm
     }
+    seq -> felicitous
     k_graceful [label="k-graceful"]
     k_beta_p -> k_graceful
     k_beta_p -> triangular
