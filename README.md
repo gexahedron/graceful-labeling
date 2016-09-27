@@ -10,8 +10,8 @@ Various code related to the problem of graph labelings (specifically, trees: gra
 ![Tree labelings](/diagram/tree_labelings.png)
 
 Notation is borrowed from [1] and [2]:
-* 1-seq-additive = 1-sequentially additive
-* ρ bi = ρ bigraceful
+* seq-additive = sequentially additive
+* ρ++ bi = ρ++ bigraceful
 * red dotted border means that this labeling doesn't work for all trees and we don't have a full characterization of counterexamples
 * black dotted border means that this labeling has known families of counterexamples and it is conjectured that there are no other counterexamples
 * yellow colour means that it's a theorem
