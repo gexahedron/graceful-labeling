@@ -10,7 +10,7 @@ Various code related to the problem of graph labelings (specifically, trees: gra
 ![Tree labelings](/diagram/tree_labelings.png)
 
 Notation is borrowed from [1] and [2]:
-* seq = sequential
+* 1-seq-additive = 1-sequentially additive
 * ρ bi = ρ bigraceful
 * red dotted border means that this labeling doesn't work for all trees and we don't have a full characterization of counterexamples
 * black dotted border means that this labeling has known families of counterexamples and it is conjectured that there are no other counterexamples
@@ -40,6 +40,7 @@ Example:
 * and maybe, but no intuition or proof, with n not equal to 3, the number of alpha-labelings for all graphs is always an odd number (verified for n <= 14)
 * suppose we study a question of existence of alpha labeling of a tree. Sometimes a tree doesn't have it because of the parity condition (TODO). Can this obstruction also be a problem for β+ labeling? It turns out that no, it can't (TODO).
 * there's a hypothetical characterization of all treees which are not 0-ubiquitous [3]. We know that maximally valued edge is always connected to the 0 vertex. Can we characterize the forbidden places of this edge in trees? It looks like it's possible, and in addition to 2 interesting families in [3] of forbidden placings of this edge, we get only 4 (or 5?) new families (TODO). It also seems that we do get something similar for sequential labeling, although the number of families of counterexamples looks huge or infinite at the moment (TODO).
+* conjecturing here that elegant labeling exists for all trees, except for 1 family of counterexamples (TODO)
 * the inductive constructions by Koh, Rogers and Tan [4, 5, and also see 6, 7] and the transfer method both are useful for determining the possible placings of the maximally valued edge (in case of so called delta construction we have 2 trees, A and B, and possible placings of maximal-value edge in both of them and from this information we can derive the possible placings of maximal-value edge in their delta and delta+ products), but i haven't tried to code this yet.
 * Code for graceful tree packing conjecture, where every tree recieves a similar-to-graceful labeling (TODO). And more!
 # References:
