@@ -1,12 +1,12 @@
 /*
- * File:   k_beta_plus.cpp
+ * File:   any_beta_plus.cpp
  * Author: Nikolay Ulyanov
  *
  * Created on 18 June 2014
  */
 
 
-// k-beta-seq labelings; palindrome schemes
+// any-beta-seq labelings; palindrome schemes
 // labeling conventions:
 // |V| = n, |E| = n - 1; m >= n
 // E \in [1, ..., m-1], m-1 >= |E|, m-1 = max{E}
@@ -75,7 +75,7 @@ int kol;
 
 clock_t beginClock, curClock, prevClock, endClock;
 
-//k-beta+ specific structures
+//any-beta+ specific structures
 int needEdge[maxn];
 const int maxdepth = 0;
 size_t excluded[maxdepth + 1];
@@ -163,8 +163,8 @@ bool gen(size_t v) {
 		int endVal = hiVal;
 		int dir = 1;
 
-		if (!isMarked) { // k-beta+
-        //if (false) {     // k-beta 
+		if (!isMarked) { // any-beta+
+        //if (false) {     // any-beta 
 			if (type[v] == 0) {
 				if (parent[v] != -1)
 					hiVal = vertexLabels[parent[v]] - 1;
@@ -399,7 +399,7 @@ int main(int /*argc*/, char** /*argv*/)
                 }
             }
 
-            // Conjecture: we should always have at least one k-beta+ labeling, so kol > 0
+            // Conjecture: we should always have at least one any-beta+ labeling, so kol > 0
             if (!kol) {
                 if (!hadKol0) {
                     cerr << "OHSHI~" << endl; // rename
