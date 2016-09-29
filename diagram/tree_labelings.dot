@@ -1,115 +1,157 @@
 digraph labelings {
-    //style=invis;
-    rankdir="LR";
-    graph [fontname = "georgia"];
-    node [fontname = "georgia"];
-    edge [fontname = "georgia"];
-    node [color=lightblue, style=filled, shape=Mrecord];
+    rankdir="LR"
+    graph [fontname = "georgia"]
+    node [fontname = "georgia"]
+    edge [fontname = "georgia"]
+    node [color="black", fillcolor="lightblue", penwidth=0, style=filled, shape=Mrecord]
 
+    // subgraphs
     subgraph thms {
-        node [style="filled", color="black", fillcolor="khaki"];
+        node [color="black", fillcolor="khaki", penwidth=1]
         cordial
-        node [style="dashed,filled", color="black", fillcolor="khaki"];
-        inf_beta [label="β for infinite trees"];
+        
+        node [style="dashed,filled"]
+        inf_beta [label="β for infinite trees"]
     }
 
     subgraph important_conjectures {
         node [fillcolor="lightblue3"]
         beta [label=<<B>β, graceful</B>>]
-        seq [label=<<B>sequential</B>>]
+
+        seq [label=<<B><TABLE BORDER="0" CELLBORDER="0" CELLSPACING="1">
+            <TR><TD>sequential<BR/>(a, 1)-edge-antimagic vertex</TD></TR><HR/>
+            <TR><TD>super edge-magic total</TD></TR>
+            </TABLE></B>>]
+
+        rho [label=<<B><TABLE BORDER="0" CELLBORDER="0" CELLSPACING="1">
+            <TR><TD>ρ</TD></TR><HR/>
+            <TR><TD>Ringel-Kotzig for K<SUB><FONT POINT-SIZE="10">n</FONT></SUB></TD></TR>
+            </TABLE></B>>]
+
+        rho_bi [label=<<B><TABLE BORDER="0" CELLBORDER="0" CELLSPACING="1">
+            <TR><TD>ρ bigraceful</TD></TR><HR/>
+            <TR><TD>Ringel-Kotzig for K<SUB><FONT POINT-SIZE="10">n, n</FONT></SUB></TD></TR>
+            </TABLE></B>>]
     }
 
+    subgraph not_conjectures {
+        node [color="coral3", fillcolor="coral3"]
+        alpha [label=<<B>α</B>>]
+
+        node [color="coral", fillcolor="coral"]
+        seq_plus [label=<seq<SUP><FONT POINT-SIZE="10">+</FONT></SUP>>]
+    }
+
+    subgraph almost_conjectures {
+        node [style="dashed,filled", penwidth=1]
+        
+        alpha_deg3 [label="α for max deg = 3"]
+        beta_rot [label="max-edge β-rotatability"]
+        any_beta_p [label=<any-β<SUP><FONT POINT-SIZE="10">+</FONT></SUP>>]
+        elegant
+    }
+
+    // clusters
     subgraph cluster_alpha {
-        {
-            node [style="filled", color="lightcoral", fillcolor="lightcoral"];
-            alpha [label="α"];
-        }
-        {
-            node [style="dashed,filled", color="black", fillcolor="lightblue"];
-            alpha_deg3 [label="α for max deg = 3"];
-        }
+        alpha
+        alpha_deg3
     }
 
-    beta_plus_seq [label=<β<SUP>+</SUP>seq>];
-    alpha -> beta_plus_seq;
-    beta_plus_seq -> seq;
-    beta_plus [label=<β<SUP>+</SUP>>];
-    beta_plus_seq -> beta_plus;
-    semt [label="super-edge-magic total"]
-    harm [label="harmonious"]
-    seq -> semt;
-    semt -> harm;
-    {
-        node [style="filled,rounded", color="black", fillcolor="lightblue", shape=record];
-        rho_sigma [label=<{ρ<SUP>++</SUP>bi | σ<SUP>++</SUP>}>];
-    }
-    beta_plus -> rho_sigma;
     subgraph cluster_beta {
         inf_beta
         beta
     }
-    beta_plus -> beta;
-    {
-        node [style="dashed,filled", color="black", fillcolor="lightblue"];
-        beta_rot [label="max-edge β-rotatability"]
-    }
-    beta_rot -> beta
-    beta -> cordial
-    harm -> cordial
-    subgraph cluster_rho {
-        node [fillcolor="lightblue", color="black", style="filled,rounded", shape=record];
-        rho [label=<{ρ | Ringel-Kotzig for K<SUB>n</SUB>}>];
-        rho_bi [label=<{ρ bigraceful | Ringel-Kotzig for K<SUB>n, n</SUB>}>];
-    }
-    harm -> rho_bi;
-    rho_sigma -> rho_bi;
-    rho_pp [label=<ρ<SUP>++</SUP>>];
-    rho_sigma -> rho_pp;
-    sigma_p [label=<σ<SUP>+</SUP>>];
-    rho_sigma -> sigma_p;
-    sigma [label="σ"];
-    beta -> sigma;
-    sigma_p -> sigma;
-    rho_p [label=<ρ<SUP>+</SUP>>];
-    rho_pp -> rho_p;
-    sigma_p -> rho_p;
-    sigma -> rho;
-    rho_p -> rho;
-    {
-        node [style="dashed,filled", color="black", fillcolor="lightblue"];
-        k_beta_p [label=<any-β<SUP>+</SUP>>];
-    }
-    k_beta_p -> beta_plus;
 
-    odd_beta_plus [label="odd-β+"]
+    subgraph cluster_rho {
+        rho
+        rho_bi
+    }
+
+    // nodes with labels
+    beta_plus_seq [label=<β<SUP><FONT POINT-SIZE="10">+ </FONT></SUP>seq>]
+    beta_plus [label=<β<SUP><FONT POINT-SIZE="10">+</FONT></SUP>>]
+    emt [label="edge-magic total"]
+    harm [label="harmonious"]
+    rho_sigma [label=<<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="1">
+        <TR><TD>ρ<SUP><FONT POINT-SIZE="10">++ </FONT></SUP>bi</TD></TR><HR/>
+        <TR><TD>σ<SUP><FONT POINT-SIZE="10">++</FONT></SUP></TD></TR>
+        </TABLE>>]
+    rho_pp [label=<ρ<SUP><FONT POINT-SIZE="10">++</FONT></SUP>>]
+    sigma_p [label=<σ<SUP><FONT POINT-SIZE="10">+</FONT></SUP>>]
+    sigma [label="σ"]
+    rho_p [label=<ρ<SUP><FONT POINT-SIZE="10">+</FONT></SUP>>]
+    any_beta [label=<any-β>]
+    any_seq [label="any-seq"]
+    odd_beta_plus [label=<odd β<SUP><FONT POINT-SIZE="10">+</FONT></SUP>>]
+    odd_beta [label=<<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="1">
+        <TR><TD>odd-graceful</TD></TR><HR/>
+        <TR><TD>odd harmonious</TD></TR>
+        </TABLE>>]
+    super_beta [label="super graceful"]
+    k_graceful [label="k-graceful"]
+    triangular [label="triangular sum"]
+    fibonacci [label="Fibonacci graceful"]
+    one_seq_add [label="1-sequentially additive"]
+    k_seq_add [label="k-sequentially additive"]
+    alpha_2 [label=<α<SUB><FONT POINT-SIZE="10">2</FONT></SUB>>]
+    one_seq_add_plus [label=<1-seq add<SUP><FONT POINT-SIZE="10">+</FONT></SUP>>]
+
+    // dashed edges
+    {
+        edge [style="dashed"]
+        alpha -> beta_plus_seq
+        seq_plus -> seq
+    }
+
+    // edges
+    beta_plus_seq -> seq
+    beta_plus_seq -> beta_plus
+    seq -> emt
+    seq -> felicitous
+    seq -> k_seq_add
+    beta_plus -> rho_sigma
+    beta_plus -> beta
     beta_plus -> odd_beta_plus
+
+    beta_rot -> beta
+
+    rho_sigma -> rho_bi
+    rho_sigma -> rho_pp
+    rho_sigma -> sigma_p
+    rho_sigma -> alpha_2
+
+    beta -> sigma
+
+    rho_pp -> rho_p
+    sigma_p -> sigma
+    sigma_p -> rho_p
+    sigma -> rho
+    rho_p -> rho
+    
+    any_beta_p -> beta_plus
+    any_beta_p -> any_beta
+
+    any_beta -> beta
+    any_beta -> triangular
+    any_beta -> fibonacci
+   
+    any_seq -> seq
+
     odd_beta_plus -> rho_p
-    odd_beta [label="odd-graceful"]
     odd_beta_plus -> odd_beta
     odd_beta -> rho
-    super_beta [label="super β"]
     beta -> super_beta
-    subgraph cluster_harmonious {
-        odd_harm [label="odd-harmonious"]
-        harm
+    beta -> cordial
+    beta -> k_graceful
 
-        node [style="dashed,filled", color="black", fillcolor="lightblue"];
-        elegant
-    }
-    seq -> felicitous
-    k_graceful [label="k-graceful"]
-    k_beta_p -> k_graceful
-    k_beta_p -> triangular
+    felicitous -> cordial
+    felicitous -> harm
+    elegant -> cordial
+    harm -> rho_bi
 
-    antimagic [label="(a, 1)-edge-antimagic"]
-    seq -> antimagic
-    one_seq_add [label="1-seq-additive"]
-    k_seq_add [label="k-seq-additive"]
-    seq -> k_seq_add
     one_seq_add -> k_seq_add
+    one_seq_add_plus -> one_seq_add
 
-    alpha_2 [label=<α<SUB>2</SUB>>]
-    rho_sigma -> alpha_2
     alpha_2 -> sigma
 }
 

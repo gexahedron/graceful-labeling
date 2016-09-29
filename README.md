@@ -10,11 +10,11 @@ Various code related to the problem of graph labelings (specifically, trees: gra
 ![Tree labelings](/diagram/tree_labelings.png)
 
 Notation is borrowed from [1] and [2]:
-* seq-additive = sequentially additive
 * ρ++ bi = ρ++ bigraceful
-* red dotted border means that this labeling doesn't work for all trees and we don't have a full characterization of counterexamples
 * black dotted border means that this labeling has known families of counterexamples and it is conjectured that there are no other counterexamples
+* red colour means that this labeling doesn't work for all trees and we don't have a full characterization of counterexamples
 * yellow colour means that it's a theorem
+* bold typeface means that the labeling is important or famous
 
 β+seq labeling - is a new labeling, which is a strict subset of both β+ and sequential labelings (TODO: is it equal to intersection of them both?): we have 2 partitions of vertices in the tree and edges connect vertices from different partitions; to switch from β+ to seq and vice versa we "reverse" values in one of the partitions and shift them (mod number of vertices) by appropriate value (TODO: i guess this value is easy to calculate, depending on the size of partitions). And so the conjecture is:
 
@@ -29,12 +29,13 @@ Example:
 * β+ labels: 0 6 2 5 4 3 1
 * seq labels: 2 6 0 5 4 3 1
 * β+ edges: 0->6, 6->2, 0->5, 5->4, 0->3, 3->1 (which means that we havee every difference between 6 and 1)
-* seq edges:   2->6, 6->0, 2->5, 5->4, 2->3, 3->1 (which means that we have every sum between 4 and 9)
+* seq edges: 2->6, 6->0, 2->5, 5->4, 2->3, 3->1 (which means that we have every sum between 4 and 9)
 
 # Other new results (or alternatively, it's also interesting to note the following:)
 * There is also a very interesting any-β+ labeling (when we fix an arbitrary set of values for edges and still ask for properties of β+ that values of vertices in one of the partitions are locally more than values of another partition). It looks like there is only 1 affine family of counterexamples: T = {0->1, 1->2, 0->3, 3->4, 0->5, 5->6}; E = {1, 2, 3, 4, 6, 7} * c, c >= 1 (and also a question: does there exist a any-sequential labeling? Maybe also a any-β+seq labeling?)
 * already mentioned any-β+ labeling
 * ρ++ bigraceful labeling is the same as σ++ labeling (you just need to reverse values in one the partitions as in β+seq)
+* and actually all other new arrows and equivalences in the diagram (e. g., odd harmonious == odd-graceful, harmonious -> ρ bigraceful & c.)
 * number of graceful labelings for trees of fixed number of vertices is always divisible by 4 (TODO: we get a factor of 2 by reversing all labels and another factor by 2 by applying a proof by moving the edge with label 1) (oh, actually this was also recently independently proven in [8])
 * number of sequential labelings for all graphs (not only trees) with n vertices is equal to n! (TODO: proof using Wilf-Zeilberger method); which is actually the same number of graceful labelings for graphs with n vertices. Maybe there do exist some interesting bijection between graceful and sequential labelings?
 * and maybe, but no intuition or proof, with n not equal to 3, the number of alpha-labelings for all graphs is always an odd number (verified for n <= 14)
