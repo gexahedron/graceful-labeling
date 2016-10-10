@@ -1,11 +1,15 @@
 digraph labelings {
     rankdir="LR"
-    graph [fontname = "georgia"]
+    graph [fontname = "georgia", overlap=false]
     node [fontname = "georgia"]
     edge [fontname = "georgia"]
+    ranksep=0.1
+    compound=true
+    rankdir="LR"
     node [color="black", fillcolor="lightblue", penwidth=0, style=filled, shape=Mrecord]
 
-    // subgraphs
+
+    // semantical subgraphs
     subgraph thms {
         node [color="black", fillcolor="khaki", penwidth=1]
         cordial
@@ -25,7 +29,7 @@ digraph labelings {
 
         rho [label=<<B><TABLE BORDER="0" CELLBORDER="0" CELLSPACING="1">
             <TR><TD>ρ</TD></TR><HR/>
-            <TR><TD>Ringel-Kotzig for K<SUB><FONT POINT-SIZE="10">n</FONT></SUB></TD></TR>
+            <TR><TD>Ringel-Kotzig for K<SUB><FONT POINT-SIZE="10">2n+1</FONT></SUB></TD></TR>
             </TABLE></B>>]
 
         rho_bi [label=<<B><TABLE BORDER="0" CELLBORDER="0" CELLSPACING="1">
@@ -49,7 +53,10 @@ digraph labelings {
         beta_rot [label="max-edge β-rotatability"]
         any_beta_p [label=<any-β<SUP><FONT POINT-SIZE="10">+</FONT></SUP>>]
         elegant
+        beta_vs_seq [label="between β and seq"]
+        beta_vs_felicitous [label="between β and felicitous"]
     }
+
 
     // clusters
     subgraph cluster_alpha {
@@ -67,6 +74,7 @@ digraph labelings {
         rho_bi
     }
 
+
     // nodes with labels
     beta_plus_seq [label=<β<SUP><FONT POINT-SIZE="10">+ </FONT></SUP>seq>]
     beta_plus [label=<β<SUP><FONT POINT-SIZE="10">+</FONT></SUP>>]
@@ -82,7 +90,7 @@ digraph labelings {
     rho_p [label=<ρ<SUP><FONT POINT-SIZE="10">+</FONT></SUP>>]
     any_beta [label=<any-β>]
     any_seq [label="any-seq"]
-    odd_beta_plus [label=<odd β<SUP><FONT POINT-SIZE="10">+</FONT></SUP>>]
+    odd_beta_plus [label=<odd-β<SUP><FONT POINT-SIZE="10">+</FONT></SUP>>]
     odd_beta [label=<<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="1">
         <TR><TD>odd-graceful</TD></TR><HR/>
         <TR><TD>odd harmonious</TD></TR>
@@ -96,12 +104,14 @@ digraph labelings {
     alpha_2 [label=<α<SUB><FONT POINT-SIZE="10">2</FONT></SUB>>]
     one_seq_add_plus [label=<1-seq add<SUP><FONT POINT-SIZE="10">+</FONT></SUP>>]
 
+
     // dashed edges
     {
         edge [style="dashed"]
         alpha -> beta_plus_seq
         seq_plus -> seq
     }
+
 
     // edges
     beta_plus_seq -> seq
@@ -153,5 +163,11 @@ digraph labelings {
     one_seq_add_plus -> one_seq_add
 
     alpha_2 -> sigma
+
+    beta_vs_seq -> beta
+    beta_vs_seq -> seq
+
+    beta_vs_felicitous -> beta
+    beta_vs_felicitous -> felicitous
 }
 
