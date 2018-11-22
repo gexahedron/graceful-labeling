@@ -136,7 +136,9 @@ void buildLinks() {
 			revLinkCount[link[i]] = revLinkCount[i]+1;
 }
 
+// TODO
 bool checkAlpha() {
+  return false;
 }
 
 bool checkSequentiallity() {
@@ -412,17 +414,22 @@ bool gen(int v) {
 
 				if (parent[v] != -1) {
 					edgeVal = abs(label[v] - label[parent[v]]);
-					if (usedEdge[edgeVal])
-						if ((v == pr[0]) || (v == pr[1]))
+					if (usedEdge[edgeVal]) {
+						if ((v == pr[0]) || (v == pr[1])) {
 							break;
-						else
+					  } else {
 							continue;
+            }
+          }
 
-					if (link[v] != -1)
-						if (edgeVal > abs(label[link[v]]-label[parent[link[v]]]))
+					if (link[v] != -1) {
+						if (edgeVal > abs(label[link[v]]-label[parent[link[v]]])) {
 							continue;
-					if (edgeVal < revLinkCount[v])
+            }
+          }
+					if (edgeVal < revLinkCount[v]) {
 						continue;
+          }
 					usedEdge[edgeVal] = true;
 				}
 				usedVertex[label[v]] = true;
