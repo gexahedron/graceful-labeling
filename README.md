@@ -30,7 +30,7 @@ Example:
 * T = {0->1, 1->2, 0->3, 3->4, 0->5, 5->6}
 * β+ labels: 0 6 2 5 4 3 1
 * seq labels: 2 6 0 5 4 3 1
-* β+ edges: 0->6, 6->2, 0->5, 5->4, 0->3, 3->1 (which means that we havee every difference between 6 and 1)
+* β+ edges: 0->6, 6->2, 0->5, 5->4, 0->3, 3->1 (which means that we have every difference between 6 and 1)
 * seq edges: 2->6, 6->0, 2->5, 5->4, 2->3, 3->1 (which means that we have every sum between 4 and 9)
 
 # Other new results (or alternatively, it's also interesting to note the following:)
