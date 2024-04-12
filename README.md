@@ -2,7 +2,6 @@
 
 (btw, WARNING: LICENSE is not applicable to any of freetree.h files; consult [http://pallini.di.uniroma1.it](http://pallini.di.uniroma1.it) for licensing)
 
-[![Join the chat at https://gitter.im/gexahedron/graceful-labeling](https://badges.gitter.im/gexahedron/graceful-labeling.svg)](https://gitter.im/gexahedron/graceful-labeling?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 [![License](http://img.shields.io/:license-mit-blue.svg)](http://doge.mit-license.org)
 
 
