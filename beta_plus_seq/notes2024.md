@@ -2,11 +2,12 @@ TODO: retrieve notes from cycle-double-cover project
 
 
 TODO: ? bijection between beta and seq labelings
-    TODO: number of sequential labelings for all graphs (not only trees) with n vertices is equal to n!
+    TODO: number of sequential labelings for all graphs (not only trees) with n vertices is equal to (n-1)!
         TODO: prove using Wilf-Zeilberger method
             or just prove it recursively
-    TODO: is it actually the same set of graphs?
-        for n=1,2,3 this is true
+    DONE: is it actually the same set of graphs?
+        for n=2,3,4 this is true
+        no, breaks on n=5
 
 
 TODO: is beta+seq equal to intersection of them both?
